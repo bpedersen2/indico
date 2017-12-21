@@ -48,6 +48,8 @@ Improvements
 - Add user setting whether to show future events or not by default in a
   category. Also keep the per-category status in the session (:issue:`3233`,
   thanks :user:`bpedersen2`)
+- Improved input validation allowing to validate on min/max length
+  (thanks :user:`bpedersen2`)
 
 Internal Changes
 ^^^^^^^^^^^^^^^^

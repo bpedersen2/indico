@@ -9,3 +9,19 @@
         max="60">
     <i class="info-helper" title="{{ 'Must be between 5 and 60' | i18n }}"></i>
 </div>
+<ng-if="field.inputType == 'text'>
+    <div class="regFormEditLine">
+        <label class="regFormDialogCaption">
+            {{ 'Max length in char' | i18n }}
+        </label>
+        <input type="number" name="maxlength" ng-model="formData.maxLength">
+        <i class="info-helper" title="{{ 'Maximimum allowed length' | i18n }}"></i>
+    </div>
+    <div class="regFormEditLine">
+        <label class="regFormDialogCaption">
+            {{ 'Min length in char' | i18n }}
+        </label>
+        <input type="number" name="minlength" ng-model="formData.minLength">
+        <i class="info-helper" title="{{ 'Minimimum allowed length' | i18n }}"></i>
+    </div>
+</ng-if>
