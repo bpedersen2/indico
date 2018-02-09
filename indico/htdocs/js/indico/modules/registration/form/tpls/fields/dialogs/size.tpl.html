@@ -24,4 +24,11 @@
         <input type="number" name="minlength" ng-model="formData.minLength">
         <i class="info-helper" title="{{ 'Minimimum allowed length' | i18n }}"></i>
     </div>
+    <div class="regFormEditLine">
+        <label class="regFormDialogCaption">
+            {{ 'Validation pattern' | i18n }}
+        </label>
+        <input type="text" name="validpattern" ng-model="formData.validPattern">
+        <i class="info-helper" title="{{ 'Validation pattern (a javascript regular expression) }}' | i18n }}"></i>
+    </div>
 </ng-if>

@@ -760,6 +760,7 @@ ndRegForm.directive('ndTextField', function(url) {
             scope.settings.formData.push('length');
             scope.settings.formData.push('maxLength');
             scope.settings.formData.push('minLength');
+            scope.settings.formData.push('validPattern');
         }
     };
 });

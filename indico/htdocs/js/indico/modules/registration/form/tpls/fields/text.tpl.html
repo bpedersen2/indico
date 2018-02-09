@@ -7,6 +7,7 @@
         ng-required="field.isRequired"
         ng-maxlength="{{ field.maxLength }}"
         ng-minlength="{{ field.minLength }}"
+        ng-pattern="{{ field.validPattern }}"
         ng-class="{
             hasError: validationStarted && nestedForm.$invalid
         }"/>
@@ -17,6 +18,10 @@
 
     <span ng-show="validationStarted && nestedForm.$invalid && nestedForm.$error.maxlength" class="error-message-tag">
      {{ 'Maximum length:' | i18n }} {{ field.maxLength }}
+    </span>
+
+    <span ng-show="validationStarted && nestedForm.$invalid && nestedForm.$error.pattern" class="error-message-tag">
+     {{ 'Pattern:' | i18n }} {{ field.validPattern }}
     </span>
 
     <span ng-show="validationStarted && nestedForm.$invalid && nestedForm.$error.required && field.isRequired" class="error-message-tag">
