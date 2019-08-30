@@ -31,9 +31,15 @@
     %% body
     \mainmatter
 
+    % setup  header/footer, this part is independent from item contents
+    \fancyhead[L]{\small \rmfamily \color{gray} \truncateellipses{\VAR{event.title}}{80pt} / \VAR{title}}
+    \fancyfoot[L]{\small \rmfamily \color{gray} \today}
+    \fancyfoot[C]{}
+    \fancyfoot[R]{\small \rmfamily \color{gray} \VAR{(_('Page {}')|latex(true)).format('\\thepage')|rawlatex }}
+
     \JINJA{for item in items}
         \newpage
-        \fancyhead[L]{\small \rmfamily \color{gray} \truncateellipses{\VAR{event.title}}{80pt} / \VAR{title}}
+        % set item title in for header, this needs to be in the loop
         \fancyhead[R]{\small \rmfamily \color{gray} \truncateellipses{\VAR{item.title}}{150pt}}
         \phantomsection
         \addcontentsline{toc}{section}{\VAR{item.title}}
@@ -49,8 +55,5 @@
             \VAR{render_contribution(item, tz) | rawlatex}
         \JINJA{endif}
 
-        \fancyfoot[L]{\small \rmfamily \color{gray} \today}
-        \fancyfoot[C]{}
-        \fancyfoot[R]{\small \rmfamily \color{gray} \VAR{(_('Page {}')|latex(true)).format('\\thepage')|rawlatex }}
     \JINJA{endfor}
 \JINJA{endblock}
