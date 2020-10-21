@@ -2829,7 +2829,7 @@ msgstr ""
 #: indico/modules/categories/templates/display/sidebar.html:78
 #, python-format
 msgid "starts %(time)s"
-msgstr ""
+msgstr "beginnt %(time)s"
 
 #: indico/modules/categories/templates/display/overview/base.html:8
 msgid "Display options"
