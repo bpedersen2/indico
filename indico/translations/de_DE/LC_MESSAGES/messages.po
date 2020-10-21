@@ -16190,7 +16190,7 @@ msgstr "‚Heute‘"
 
 #: indico/util/date_time.py:276
 msgid "'Tomorrow'"
-msgstr "‚Morgen‘"
+msgstr "'‚Morgen‘'"
 
 #: indico/util/date_time.py:277
 msgid "'Last' EEEE"
