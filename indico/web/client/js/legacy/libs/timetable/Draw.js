@@ -202,9 +202,12 @@ type(
         if (this.eventData.location) {
           this.locationDiv.append(addComma ? ', ' : '');
           this.locationDiv.append(this.eventData.location);
-        }
-
-        // If it's a contribution add the speakers information
+        } 
+      	this.vcdiv = Html.div('timetableBlockVC');
+	if (this.eventData.vcrooms) {
+                this.vcdiv.dom.innerHTML= this.eventData.vcrooms;
+	}
+	// If it's a contribution add the speakers information
         if (self.eventData.presenters && self.eventData.presenters.length > 0) {
           var firstPresenter = self.eventData.presenters[0];
           this.presentersDiv = Html.div({className: 'timetableBlockPresenters'});
@@ -236,6 +239,7 @@ type(
           this.headerBlock.append(this.convenerDiv);
         }
         this.footerBlock.append(this.locationDiv);
+        this.footerBlock.append(this.vcdiv);
         this.footerBlock.append(this.timeDiv);
         this.div.append(this.footerBlock);
       }

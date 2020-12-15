@@ -140,6 +140,8 @@ class TimetableSerializer(object):
                      'pdf': url_for('sessions.export_session_timetable', block.session),
                      'url': url_for('sessions.display_session', block.session),
                      'friendlyId': block.session.friendly_id})
+        vcdata = self._get_vc_joinbuttons(entry)
+        data['vcrooms'] = ''.join(vcdata)
         return data
 
     def serialize_contribution_entry(self, entry):
@@ -174,6 +176,8 @@ class TimetableSerializer(object):
                      'friendlyId': contribution.friendly_id,
                      'references': map(SerializerBase.serialize_reference, contribution.references),
                      'board_number': contribution.board_number})
+        vcdata = self._get_vc_joinbuttons(entry)
+        data['vcrooms'] = ''.join(vcdata)
         return data
 
     def serialize_break_entry(self, entry, management=False):
@@ -194,6 +198,24 @@ class TimetableSerializer(object):
                      'sessionSlotEntryId': entry.parent.id if entry.parent else None,
                      'title': break_.title})
         return data
+
+    def _get_vc_joinbuttons(self, entry):
+        event = entry.event
+        vcdata = []
+        for vc_room_assoc in entry.object.vc_room_associations:
+            vc_room = vc_room_assoc.vc_room
+            plugin = vc_room.plugin
+            if plugin:
+                vcdata.append(plugin.render_event_buttons(vc_room, vc_room_assoc))
+        if not vcdata and entry.parent:
+            vcdata = self._get_vc_joinbuttons(entry.parent)
+        if not vcdata and event:
+            for vc_room_assoc in event.vc_room_associations:
+                vc_room = vc_room_assoc.vc_room
+                plugin = vc_room.plugin
+                if plugin:
+                    vcdata.append(plugin.render_event_buttons(vc_room, vc_room_assoc))
+        return vcdata
 
     def _get_attachment_data(self, obj):
         def serialize_attachment(attachment):
