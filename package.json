@@ -135,6 +135,7 @@
     "jest-mock-axios": "^4.6.1",
     "mini-css-extract-plugin": "^1.6.2",
     "node-glob": "^1.2.0",
+    "node-modules-regexp": "^1.0.0",
     "node-sass": "^7.0.1",
     "node-sass-import-once": "^1.2.0",
     "path-browserify": "^1.0.1",
