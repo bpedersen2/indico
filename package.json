@@ -17,6 +17,7 @@
     "chartist": "^0.11.4",
     "ckeditor": "git+https://indico@github.com/indico/indico-ckeditor.git#build-4.7.3",
     "clipboard": "^2.0.10",
+    "code-point-at": "^2.0.0",
     "connected-react-router": "^6.9.2",
     "core-js": "^2.6.12",
     "dropzone": "^5.9.3",
