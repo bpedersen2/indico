@@ -1614,6 +1614,7 @@ Improvements
   or abstracts (:pr:`5598`)
 - Add setting to allow submitters to edit custom fields in their contributions
   (:pr:`5599`)
+- Only visible events are exported in the atom feed (:pr:`5472`, thanks :user:`bpedersen2`)
 
 Bugfixes
 ^^^^^^^^
