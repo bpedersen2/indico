@@ -181,6 +181,7 @@
                 <div class="group">
                     <button class="i-button button change-columns-width" title="{% trans %}Adapt columns width{% endtrans %}"></button>
                 </div>
+	        {{ template_hook('contribution-plugin-action-button', event=event) }}
             </div>
             <div class="toolbar">
                 <div class="group" id="filter-statistics">
