@@ -1,13 +1,13 @@
 {
   "name": "indico",
-  "version": "3.2.1",
+  "version": "2.0.0",
   "description": "Indico",
   "main": "indico/web/client/js/index.js",
   "directories": {
     "doc": "docs"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.18.3",
     "@ckeditor/ckeditor5-react": "^5.0.0",
     "@dr.pogodin/babel-plugin-react-css-modules": "~6.1.1",
     "ajv": "^8.11.0",
@@ -19,7 +19,7 @@
     "ckeditor": "git+https://indico@github.com/indico/ckeditor.git#v1.10.0",
     "clipboard": "^2.0.11",
     "connected-react-router": "^6.9.2",
-    "core-js": "^3.26.0",
+    "core-js": "^2.6.12",
     "dropzone": "^5.9.3",
     "file-selector": "^0.6.0",
     "final-form": "^4.20.7",
@@ -47,7 +47,6 @@
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.34",
     "nanoid": "^3.3.4",
-    "npm": "^8.19.2",
     "pagedown": "^1.1.0",
     "pagedown-editor": "0.0.10",
     "process": "^0.11.10",
@@ -136,7 +135,6 @@
     "jest-mock-axios": "^4.6.1",
     "mini-css-extract-plugin": "^1.6.2",
     "node-glob": "^1.2.0",
-    "node-modules-regexp": "^1.0.0",
     "node-sass": "^7.0.1",
     "node-sass-import-once": "^1.2.0",
     "path-browserify": "^1.0.1",
