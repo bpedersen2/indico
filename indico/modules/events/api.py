@@ -367,7 +367,7 @@ class SerializerBase:
                    if contrib.legacy_mapping else str(contrib.friendly_id)),
             'db_id': contrib.id,
             'friendly_id': contrib.friendly_id,
-            'title': contrib.title,
+            'title': f'{contrib.board_number}: {contrib.title}' if (contrib.board_number) else contrib.title,
             'startDate': self._serialize_date(contrib.start_dt) if contrib.start_dt else None,
             'endDate': self._serialize_date(contrib.start_dt + contrib.duration) if contrib.start_dt else None,
             'duration': contrib.duration.seconds // 60,
